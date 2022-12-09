@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Phan loai chi so BMI</h1>
+<lable>
+  Chieu cao <input type="number" id="cm" value="chieucao">cm
+</lable>
+<br>
+<lable>
+  Can nang <input type="number" id="kg" value="cannang"> kg
+</lable>
+<br>
+<p type="number" id="bmi">bmi:</p>
+<br>
+<p id="ketqua" type="text" >Ket qua la:</p>
+<button onclick="submit()">Submit</button>
+<script>
+  function submit() {
+    let chieucao = +document.getElementById(cm).value;
+    let cannang = +document.getElementById(kg).value;
+    let bmi = cannang / (chieucao*chieucao);
+    +document.getElementById("bmi").value=bmi;
+      if (bmi < 18)
+          document.getElementById('ketQua').innerHTML="Bạn là người gầy"
+      else if (bmi < 25.0)
+          document.getElementById('ketQua').innerHTML="Bạn là người bình thường"
+      else if (bmi < 30.0)
+          document.getElementById('ketQua').innerHTML="Bạn là người tiền béo phì"
+      else
+          document.getElementById('ketQua').innerHTML='Bạn là người béo phì'
+
+  }
+</script>
+</body>
+</html>
